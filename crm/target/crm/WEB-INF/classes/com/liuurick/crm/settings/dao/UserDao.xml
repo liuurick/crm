@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuurick.crm.settings.dao.UserDao">
+    <sql id="Base_Column_List">
+        id,loginAct,name,loginPwd,email,expireTime,lockState,deptno,allowIps,createTime,createBy,editTime,editBy
+    </sql>
+
+    <select id="getUserList" resultType="User">
+        select
+        <include refid="Base_Column_List"/>
+        from tbl_user
+    </select>
+
+    <select id="login" resultType="User">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        tbl_user
+        where loginAct=#{loginAct} and loginPwd=#{loginPwd}
+    </select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
