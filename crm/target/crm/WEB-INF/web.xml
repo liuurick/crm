@@ -2,8 +2,12 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/com/liuurick/crm/workbench/dao/ActivityRemarkDao.xml</param-value>
+    </context-param>
 
-  <filter>
+    <filter>
     <filter-name>EncodingFilter</filter-name>
     <filter-class>com.liuurick.crm.web.filter.EncodingFilter</filter-class>
   </filter>
@@ -36,10 +40,20 @@
     <servlet-name>ActivityController</servlet-name>
     <servlet-class>com.liuurick.crm.workbench.web.controller.ActivityController</servlet-class>
   </servlet>
+
   <servlet-mapping>
     <servlet-name>ActivityController</servlet-name>
     <url-pattern>/workbench/activity/getUserList.do</url-pattern>
     <url-pattern>/workbench/activity/save.do</url-pattern>
+    <url-pattern>/workbench/activity/pageList.do</url-pattern>
+    <url-pattern>/workbench/activity/delete.do</url-pattern>
+    <url-pattern>/workbench/activity/getUserListAndActivity.do</url-pattern>
+    <url-pattern>/workbench/activity/update.do</url-pattern>
+    <url-pattern>/workbench/activity/detail.do</url-pattern>
+    <url-pattern>/workbench/activity/getRemarkListByAid.do</url-pattern>
+    <url-pattern>/workbench/activity/deleteRemark.do</url-pattern>
+    <url-pattern>/workbench/activity/saveRemark.do</url-pattern>
+    <url-pattern>/workbench/activity/updateRemark.do</url-pattern>
   </servlet-mapping>
-</web-app>
 
+</web-app>
